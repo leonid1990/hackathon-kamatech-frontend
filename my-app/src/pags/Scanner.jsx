@@ -4,7 +4,7 @@ import QrReader from 'react-qr-reader';
 import axios from 'axios';
 
 class Scanner extends Component {
-    state = { RedirectLogin: false ,result:null, Qr:null, userId:'', locationId:'',date:''}
+    state = { RedirectLogin: false ,result:null, Qr:null, userId:'', locationId:'',date:'', time:''}
     redirect = () => {this.setState({RedirectLogin:true})}
     
     handleError = err => {
@@ -24,7 +24,7 @@ class Scanner extends Component {
             {
              userId: this.state.userId, 
              locationId: this.state.locationId,
-             date: this.state.date
+             date: new Date (`${this.state.date}/${this.state.time}`)
             }
           )
           .then((res) => {
@@ -63,6 +63,7 @@ class Scanner extends Component {
           <br></br>
           <input value={this.state.date} required onChange={e => this.setState({ date: e.target.value })} type="date" placeholder="date" />
           <br></br>
+<input type="time" onChange={e => this.setState({ time: e.target.value })} required/>
           <br></br>
           <button type="button"  onMouseDown={() => { this.add() }}>Add</button>
             </div>
