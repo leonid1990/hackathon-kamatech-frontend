@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Login from './pags/Login';
 import Scanner from './pags/Scanner';
 import CreatingQRCode from './pags/CreatingQRCode';
+import ReportInsulation from './pags/ReportInsulation';
+import UserManagement from './pags/UserManagement';
 
 class App extends Component {
   state = { email: '', password: ''}
@@ -15,8 +17,12 @@ class App extends Component {
       <BrowserRouter>
               <Link to='/Scanner'>Scanner</Link>
               <Link to='/CreatingQRCode'>CreatingQRCode</Link>
+              <Link to='/ReportInsulation'>ReportInsulation</Link>
               <Link to='/'>Login</Link>
+              <Link to='/UserManagement'>UserManagement</Link>
          <Switch>
+         <Route exact path='/UserManagement' render={() => <UserManagement  />} />
+           <Route exact path='/ReportInsulation' render={() => <ReportInsulation  />} />
            <Route exact path='/Scanner' render={() => <Scanner  />} />
            <Route exact path='/CreatingQRCode' render={() => <CreatingQRCode password={this.state.password} email={this.state.email} />} />
            <Route exact path='/' render={() => <Login onChange={this.onChange}/>} />

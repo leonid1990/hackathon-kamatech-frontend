@@ -1,0 +1,21 @@
+.UserManagement table {
+    /* text-align: center; */
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    /* border-collapse: collapse; */
+    border: 3px solid #ddd;
+    display: block;
+    max-height: 600px;
+    overflow: auto;
+    margin: auto;
+    width: max-content;
+    margin-bottom: 30px;
+  }
+
+  .UserManagement td,  th {
+    border: 1px solid #ddd;
+    padding: 4px;
+    /* width: 30px; */
+    /* height: 30px; */
+  }
+  .UserManagement tr:nth-child(even){background-color: burlywood;}
+  .UserManagement .Buttons{margin: auto; background-color: tomato;}
